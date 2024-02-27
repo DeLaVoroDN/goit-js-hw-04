@@ -1,15 +1,25 @@
-'use strict';
+'use strict'; // Строгий режим, который помогает выявить и предотвратить ошибки в коде
+
 function calcAverageCalories(days) {
-  let totalCalories = 0;
-  const examinationDay = days.length;
+  // Функция для вычисления среднего количества калорий за неделю
+
+  let totalCalories = 0; // Переменная для хранения общего количества калорий
+  const examinationDay = days.length; // Количество дней, за которые были проведены измерения
+
   if (examinationDay === 0) {
-    return 0;
+    // Проверяем, если дней для анализа нет
+    return 0; // Если да, возвращаем 0
   }
+
   for (const day of days) {
-    totalCalories += day.calories;
+    // Итерируемся по каждому дню из массива
+    totalCalories += day.calories; // Прибавляем количество калорий за текущий день к общей сумме
   }
-  return totalCalories / days.length;
+
+  return totalCalories / examinationDay; // Возвращаем среднее количество калорий за день
 }
+
+// Вывод результатов вызова функции для двух различных наборов данных
 console.log(
   calcAverageCalories([
     { day: 'monday', calories: 3010 },
@@ -20,7 +30,7 @@ console.log(
     { day: 'saturday', calories: 3280 },
     { day: 'sunday', calories: 3300 },
   ])
-); // 3180
+); // Выведет среднее количество калорий для первого набора данных
 
 console.log(
   calcAverageCalories([
@@ -32,6 +42,6 @@ console.log(
     { day: 'saturday', calories: 2280 },
     { day: 'sunday', calories: 2610 },
   ])
-); // 2270
+); // Выведет среднее количество калорий для второго набора данных
 
-console.log(calcAverageCalories([])); // 0
+console.log(calcAverageCalories([])); // Выведет 0, так как нет данных для анализа

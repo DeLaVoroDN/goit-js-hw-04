@@ -1,22 +1,36 @@
-'use strict';
+'use strict'; // Строгий режим, который помогает выявить и предотвратить ошибки в коде
+
 const profile = {
-  username: 'Jacob',
-  playTime: 300,
+  // Объект "profile" содержит информацию о пользователе и методы для ее изменения и получения
+
+  username: 'Jacob', // Свойство "username" хранит имя пользователя
+  playTime: 300, // Свойство "playTime" хранит количество часов игры
+
   changeUsername(newName) {
-    this.username = newName;
+    // Метод "changeUsername" позволяет изменить имя пользователя
+    this.username = newName; // Присваиваем новое имя свойству "username"
   },
+
   updatePlayTime(hours) {
-    this.playTime += hours;
+    // Метод "updatePlayTime" позволяет обновить количество часов игры
+    this.playTime += hours; // Увеличиваем количество часов игры на указанное количество
   },
+
   getInfo() {
-    return `${this.username} has ${this.playTime} active hours!`;
+    // Метод "getInfo" возвращает информацию о пользователе
+    return `${this.username} has ${this.playTime} active hours!`; // Возвращаем строку с информацией о пользователе
   },
 };
 
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+// Выводим информацию о пользователе, используя метод "getInfo"
+console.log(profile.getInfo());
 
+// Изменяем имя пользователя на "Marco"
 profile.changeUsername('Marco');
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
+// Выводим обновленную информацию о пользователе
+console.log(profile.getInfo());
 
+// Обновляем количество часов игры на 20
 profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+// Выводим обновленную информацию о пользователе
+console.log(profile.getInfo());
